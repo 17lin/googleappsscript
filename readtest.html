@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<meta property="og:title" content="Chiayi OpenData X TGOS">
+		<meta property="og:description" content="Chiayi X OpenData X TGOS">
+		<meta property="og:type" content="website">
+		<title>Chiayi X OpenData X TGOS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+				$(function() {
+					$("#submit").click(function(e) {
+						e.preventDefault();
+						$.ajax({
+							type: "post",
+							data: {
+								"method": "read",
+								"query": "HH"
+							},
+							url: "https://script.google.com/macros/s/AKfycbx6KBeaau6ZwfuaIMym-aOjuYJ3pMBc1bM_3eDAAVfaJXB-mZjS/exec", // 填入網路應用程式網址
+							success: function (e) {
+								console.log(e);
+								document.getElementById("result").innerHTML=e;
+							}
+						});
+					});
+				});
+		</script>
+	</head>
+<body>
+	<div id = "result"></div>
+	<button id = "submit">submit</button>
+</body>
+</html>
