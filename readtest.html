@@ -14,11 +14,11 @@
 					$("#submit").click(function(e) {
 						e.preventDefault();
 						$.ajax({
-							type: "GET",
+							type: "POST",
 							url: "https://script.google.com/macros/s/AKfycbx6KBeaau6ZwfuaIMym-aOjuYJ3pMBc1bM_3eDAAVfaJXB-mZjS/exec",
 							data: {
 								"method": "read",
-								"query": "HH"
+								"query": "test"
 							},
 							success: function (e) {
 								console.log(e);
