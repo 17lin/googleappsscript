@@ -14,7 +14,7 @@
 					$("#submit").click(function(e) {
 						e.preventDefault();
 						$.ajax({
-							type: "POST",
+							type: "GET",
 							url: "https://script.google.com/macros/s/AKfycbx6KBeaau6ZwfuaIMym-aOjuYJ3pMBc1bM_3eDAAVfaJXB-mZjS/exec",
 							data: {
 								"method": "read",
@@ -24,9 +24,9 @@
 								console.log(e);
 								document.getElementById("result").innerHTML=e;
 							},
-							error: function(result) {
+							error: function(e) {
 								console.log('error');
-								console.log(result);
+								console.log(e);
 								document.getElementById("result").innerHTML=e;
 							}
 						});
