@@ -14,14 +14,19 @@
 					$("#submit").click(function(e) {
 						e.preventDefault();
 						$.ajax({
-							type: "post",
+							type: "POST",
+							url: "https://script.google.com/macros/s/AKfycbx6KBeaau6ZwfuaIMym-aOjuYJ3pMBc1bM_3eDAAVfaJXB-mZjS/exec",
 							data: {
 								"method": "read",
 								"query": "HH"
 							},
-							url: "https://script.google.com/macros/s/AKfycbx6KBeaau6ZwfuaIMym-aOjuYJ3pMBc1bM_3eDAAVfaJXB-mZjS/exec", // 填入網路應用程式網址
 							success: function (e) {
 								console.log(e);
+								document.getElementById("result").innerHTML=e;
+							},
+							error: function(result) {
+								console.log('error');
+								console.log(result);
 								document.getElementById("result").innerHTML=e;
 							}
 						});
